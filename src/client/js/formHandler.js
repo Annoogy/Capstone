@@ -43,4 +43,9 @@ const checkData = async (url = "", data = {}) => {
     } catch (error) {
         console.log('error', error);
     }}
-
+   
+   
+      var el = document.getElementById('submit');
+      if(el){
+        el.addEventListener("click", handleSubmit);
+      }
