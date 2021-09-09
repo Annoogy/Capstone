@@ -7,7 +7,7 @@ export function handleSubmit(event) {
    if(Client.checkForURL(inputURL)) {
 
     console.log("::: Form Submitted :::")
-    checkData('http://localhost:8081/apicloud', {url: inputURL})
+    checkData('https://localhost:8081/apicloud', {url: inputURL})
   
     .then(function(res) {
        
