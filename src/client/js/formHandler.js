@@ -7,7 +7,7 @@ export function handleSubmit(event) {
    if(Client.checkForURL(inputURL)) {
 
     console.log("::: Form Submitted :::")
-    checkData('https://localhost:8081/apicloud', {url: inputURL})
+    checkData('http://localhost:8080/apicloud', {url: inputURL})
   
     .then(function(res) {
        
@@ -45,7 +45,13 @@ const checkData = async (url = "", data = {}) => {
     }}
    
    
-      var el = document.getElementById('submit');
+      let el = document.getElementById('submit');
       if(el){
         el.addEventListener("click", handleSubmit);
       }
+     
+      const dateTrip =  document.querySelector('input[type="date"]');
+      dateTrip.value = new Date().toLocaleDateString();
+      dateTrip.min = new Date().toLocaleDateString();
+      console.log(dateTrip);
+

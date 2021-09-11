@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <script src="https://kit.fontawesome.com/f83f29da56.js" crossorigin="anonymous"></script>
         
-        <title>Test</title>
+        <title>Travel App</title>
     
     </head>
 
@@ -12,7 +12,7 @@
 
         <header>
             <div class="">
-                <h1>NLP-Project</h1>
+                <h1>Travel APP</h1>
                 
             </div>
             <div class="">
@@ -21,11 +21,12 @@
         </header>
 
         <main>
-            <p>Sentiment Analysis is MeaningCloud's solution for performing a detailed multilingual sentiment analysis of texts from different sources.</p>
+            <p>Enter your desired trip location & date</p>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="url" type="text" name="input" value="" placeholder="Please,Enter a valid URL">
-                    <input type="submit" name="" value="submit">
+                    <input id="url" type="text" name="input" value="" placeholder="Enter your trip location">
+                    <input  type="date" name="date"  placeholder="Enter your trip date">
+                    <input type="submit" id="submit" name="" value="submit">
                 </form>
             </section>
 
@@ -46,14 +47,16 @@
             <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
             <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
         </footer>
-        <script>
-            // Check that service workers are supported
-            if ('serviceWorker' in navigator) {
+    <script>
+           // Check that service workers are supported
+          
+           /*  if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-           </script>
+            */
+           </script> 
     </body>
 </html>
