@@ -25,7 +25,7 @@ export function handleSubmit(event) {
 }
 else{
     // Display error message if URL is not valide
-    alert('Please,enter a valid URL');
+    alert('Please,enter a valid Location');
     
 } 
 };
@@ -46,7 +46,15 @@ const checkData = async (url = "", data = {}) => {
         return reciecvedData;
     } catch (error) {
         console.log('error', error);
-    }}
+    }
+ // Get location coordinates from name 
+ let tripPlace = document.querySelector('input[name="trip"]').value
+ let trip = getPlace(tripPlace)
+ if(!trip) {
+   alert(`${trip} is not a valid place, please check if it is correct`)
+   return
+ }
+}
    
    
       let el = document.getElementById('submit');

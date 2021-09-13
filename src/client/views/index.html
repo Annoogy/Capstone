@@ -15,18 +15,17 @@
                 <h1>Travel APP</h1>
                 
             </div>
-            <div class="">
-                navigation
-            </div>
+         
         </header>
 
         <main>
             <p>Enter your desired trip location & date</p>
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="url" type="text" name="input" value="" placeholder="Enter your trip location">
-                    <input  type="date" name="date" start="DD-MM-YYYY">
+                    <input id="url" type="text" name="trip" value="" placeholder="Enter your trip location">
+                    <input  type="date" name="date" id="date">
                     <input type="submit" id="submit" name="" value="submit">
+                    <button id="save">Print or Save</button>
                 </form>
             </section>
 

@@ -18,7 +18,7 @@ if( isNaN(yearInputDate)  || yearInputDate < currYearDate ){
 else if (dayInputDate < currDayDate){
     alert("Please,Enter a valid date");
         }
-        console.log(yearInputDate);
+      
     }
     
 
