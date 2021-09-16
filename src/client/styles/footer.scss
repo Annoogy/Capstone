@@ -1,6 +1,6 @@
 footer {
 display: flex;
-
+color: white;
 justify-content: center;
 font-weight: bolder;
 }
@@ -8,4 +8,9 @@ li {
     list-style: none;
     padding:5px;
     width:100px;
+    
+}
+li i {
+    color:white;
+ 
 }
