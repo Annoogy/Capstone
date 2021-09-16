@@ -1,18 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+$font-stack: "KoHo", sans-serif;
 form {
     border: 1px solid #545454;
     border-radius: 3px;
     padding: 40px;
+    
+ 
 }
-
+p{ padding-bottom: 15px;
+font-family:$font-stack;
+font-size: large;
+font-style: normal;
+}
 input {
     padding: 5px 20px;
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
 }
+
+#submit{
+    color:black;
+    background-color: white;
+    font-family:$font-stack;
+    font-weight: 600;
+}
 button{
     padding: 5px 20px;
-    width: 100%;
+    width: 30%;
     line-height: 16px;
     margin: 10px 0;
+    align-items:right;
+    color:black;
+}
+#placeName{
+    font-size: large;
+    font-weight: 900;
+    padding-bottom: 15px;
+    font-family: $font-stack;
+    color:wheat;
+    justify-content: center;
+}
+#date 
+{
+    display: flex;
+    flex-direction: row;
+    columns: 50px 50px;
+    color:white;
+    font-size:medium;
+    font-family: $font-stack;
+    padding-top:5px;
+    
+   
+}
+#stDate{
+    padding-right: 15px;
+}
+#title{
+    color:white;
+    font-size:large;
+    color:wheat;
+    font-family: $font-stack;
+    padding-top:10px;
+   
+}
+#forecast{
+
+    width:100vw;
+    color:white;
+
+    font-size:medium;
+    font-family: $font-stack;
+    padding-top:15px;
+    padding-bottom: 25px;
+ 
+}
+#print{
+    justify-items: center;
 }

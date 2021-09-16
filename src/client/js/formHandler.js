@@ -1,36 +1,58 @@
 
-export function handleSubmit(event) {
+
+export async function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let dateTrip =  document.querySelector('input[type="date"]');
-    
-    
-    Client.checkDate(dateTrip.value);
-    let inputURL = document.getElementById('url').value
-   if(Client.checkForURL(inputURL)) {
+    let startDate =  document.getElementById('start-date');
+    let endDate =  document.getElementById('end-date');
+    let inputPlace = document.getElementById('trip').value
+    // declaring all used values
+    let latitude, longtitude,displayWeather,displayPhoto,maxTemp,minTemp,weatherForecast;
+    //check data enetred is valid
+    if(Client.checkDate(startDate.value,endDate.value)){
+        if(inputPlace == null || inputPlace.length < 3){
+            alert(" Enter a valid location") ;}
+        else{
+    const geoCoordinates = await Client.getPlace(inputPlace);
+    //only if data is retreived function are called
+    if(geoCoordinates != undefined){
 
-    console.log("::: Form Submitted :::")
-    checkData('http://localhost:8081/apicloud', {url: inputURL})
+latitude = geoCoordinates.lat;   
+longtitude = geoCoordinates.lng;
+displayWeather = await Client.getWeather(latitude,longtitude);
+maxTemp = displayWeather.data[0].high_temp;
+minTemp = displayWeather.data[0].low_temp;
+weatherForecast = displayWeather.data[0].weather.description;
+displayPhoto = await Client.getImage(inputPlace);
+Client.fillData(startDate.value,endDate.value,inputPlace,maxTemp,minTemp,weatherForecast,displayPhoto);
+
+    
+    }
+    else{
+        alert(`${inputPlace} is not a valid location`);
+    }
+}
+
+}
+    
+
+   
+ 
+    
+
+   //console.log("::: Form Submitted :::")
+    /*checkData('http://localhost:8081/apitrip', Client.getPlace(inputPlace))
   
     .then(function(res) {
        
-        document.getElementById('model').innerHTML = res.model;
-        document.getElementById('confidence').innerHTML = res.confidence;
-        document.getElementById('irony').innerHTML = res.irony;
-        document.getElementById('subjectivity').innerHTML = res.subjectivity;
-        document.getElementById('score_tag').innerHTML = res.score_tag;
-        document.getElementById('agreement').innerHTML = res.agreement;
+        document.getElementById('model').innerHTML = res;
+         console.log("here is the result" + res);
     })
-}
-else{
-    // Display error message if URL is not valide
-    alert('Please,enter a valid Location');
+*/
+
+/*const checkData = async (url = "http://localhost:8081/apitrip", data = {inputPlace}) => {
     
-} 
-};
-const checkData = async (url = "", data = {}) => {
-  
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -43,20 +65,15 @@ const checkData = async (url = "", data = {}) => {
     try {
         const reciecvedData = await response.json();
         console.log('Data received:', reciecvedData)
-        return reciecvedData;
+        return reciecvedData.postalCodes[0];
     } catch (error) {
         console.log('error', error);
     }
  // Get location coordinates from name 
- let tripPlace = document.querySelector('input[name="trip"]').value
- let trip = getPlace(tripPlace)
- if(!trip) {
-   alert(`${trip} is not a valid place, please check if it is correct`)
-   return
- }
+
 }
-   
-   
+ */  
+}
       let el = document.getElementById('submit');
       if(el){
         el.addEventListener("click", handleSubmit);
@@ -64,4 +81,4 @@ const checkData = async (url = "", data = {}) => {
      
      
      
-
+    

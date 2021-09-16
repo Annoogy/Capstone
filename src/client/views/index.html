@@ -19,25 +19,40 @@
         </header>
 
         <main>
-            <p>Enter your desired trip location & date</p>
+            
             <section>
+                <p>Enter your desired trip location & date</p>
+                <!--<img src="../src/client/images/bg1.jpg" alt="travel"/>-->
                 <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="url" type="text" name="trip" value="" placeholder="Enter your trip location">
-                    <input  type="date" name="date" id="date">
-                    <input type="submit" id="submit" name="" value="submit">
-                    <button id="save">Print or Save</button>
+                    <div>Where To?</div>
+                    <input id="trip" type="text" name="trip" value="" placeholder="Your destination..... ">
+                    <div>
+                    <div>Start Date</div>
+                    <input  type="date" name="date" id="start-date" >
+                    <div>End Date</div>
+                    <input  type="date" name="date" id="end-date">
+                </div>
+                    <input type="submit" id="submit" name="" value="GO!">
+                    
                 </form>
             </section>
 
             <section>
-                <strong>Form Results:</strong>
-                <div id="model"></div>
-                <div id="confidence"></div>
-                <div id="irony"></div>
-                <div id="subjectivity"></div>
-                <div id="score_tag"></div>
-                <div id="agreement"></div>
+                
+                <div id="placeName"></div>
+                <div id="date">
+                
+                <div id="stDate"></div>
+               
+                <div id="endDate"></div>
+            </div>
+            <div id='title'></div>
+            <div id="forecast">
+            </div>
+                <img id="img" src="data:," alt/>
+                <div id="print"><button id="save" hidden = "hidden">Print or Save</button></div>
             </section>
+            
         </main>
 
         <footer>
@@ -46,16 +61,17 @@
             <li><a href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
             <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
         </footer>
-    <script>
-           // Check that service workers are supported
-          
-           /*  if ('serviceWorker' in navigator) {
+    
+   
+          <script> // Check that service workers are supported
+        
+          if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-            */
+           
            </script> 
     </body>
 </html>

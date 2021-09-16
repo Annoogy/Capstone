@@ -18,6 +18,11 @@ module.exports = {
                 test: /\.scss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
                 },
+                
+           {
+             test: /\.txt$/,
+              use: 'raw-loader' 
+          }
         ]
     },
     output: {
@@ -33,7 +38,7 @@ module.exports = {
             filename: "./index.html",
         }),
         new MiniCssExtractPlugin({ filename: "[name].css" }),
-       /* new WorkboxPlugin.GenerateSW()*/
+        new WorkboxPlugin.GenerateSW()
         
     ]
 }

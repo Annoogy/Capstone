@@ -10,13 +10,15 @@ module.exports = {
     stats: 'verbose',
     output: {
         libraryTarget: 'var',
-        library: 'Client'
+        library: 'Client',
+       
     },
     module: {
 
         rules: [
             {
-                test: '/\.js$/',
+                test: '/\.(js|jsx)$/',
+                
                 exclude: /node_modules/,
                 loader: "babel-loader"
             },
@@ -26,6 +28,7 @@ module.exports = {
            }
         ]
     },
+    
     plugins: [
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",

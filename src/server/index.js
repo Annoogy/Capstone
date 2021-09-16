@@ -40,7 +40,6 @@ app.post('/apitrip', async function(req, res) {
     const urltoCheck = req.body.trip;
     const apiGeo = `${baseURL}key=${textapi}&url=${urltoCheck}&lang=en`
 
-    
     const response = await fetch(apiGeo)
     const analysis = await response.json()
     
